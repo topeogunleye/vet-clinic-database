@@ -38,3 +38,14 @@ WHERE name = 'Agumon' OR name = 'Pikachu';
 --  2020-02-03
 --  2021-01-07
 -- (2 rows)
+
+SELECT name, escape_attempts
+FROM animals
+WHERE weight_kg < 10.5;
+--   name   | escape_attempts 
+-- ---------+-----------------
+--  Agumon  |              10
+--  Gabumon |               8
+--  Pikachu |              15
+--  Devimon |              11
+-- (4 rows)
