@@ -26,9 +26,11 @@ SELECT name
 FROM animals
 WHERE neutered is false AND escape_attempts < 3;
 
---  name 
--- ------
--- (0 rows)
+--   name   
+-- ---------
+--  Pikachu
+-- (1 row)
+
 
 SELECT date_of_birth
 FROM animals
