@@ -14,9 +14,9 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 👤 **Temitope Ogunleye**
 
-- GitHub: [@githubhandle](https://github.com/topeogunleye)
-- Twitter: [@twitterhandle](https://twitter.com/tope_leye)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/ogunleye)
+- GitHub: [@topeogunleye](https://github.com/topeogunleye)
+- Twitter: [@tope_leye](https://twitter.com/tope_leye)
+- LinkedIn: [ogunleye](https://linkedin.com/in/ogunleye)
 
 ## 🤝 Contributing
 
