@@ -21,3 +21,11 @@ WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 --   2 | Gabumon | 2018-11-15    |               8 | t        |         2
 --   4 | Devimon | 2017-05-12    |              11 | t        |         5
 -- (2 rows)
+
+SELECT name
+FROM animals
+WHERE neutered is false AND escape_attempts < 3;
+
+--  name 
+-- ------
+-- (0 rows)
