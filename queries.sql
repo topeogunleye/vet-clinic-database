@@ -16,11 +16,12 @@ SELECT name
 FROM animals 
 WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 
---  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg 
--- ----+---------+---------------+-----------------+----------+-----------
---   2 | Gabumon | 2018-11-15    |               8 | t        |         2
---   4 | Devimon | 2017-05-12    |              11 | t        |         5
+--   name   
+-- ---------
+--  Gabumon
+--  Devimon
 -- (2 rows)
+
 
 SELECT name
 FROM animals
@@ -46,11 +47,10 @@ FROM animals
 WHERE weight_kg < 10.5;
 --   name   | escape_attempts 
 -- ---------+-----------------
---  Agumon  |              10
---  Gabumon |               8
---  Pikachu |              15
---  Devimon |              11
--- (4 rows)
+--  Agumon  |               0
+--  Gabumon |               2
+-- (2 rows)
+
 
 SELECT * 
 FROM animals
