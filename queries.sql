@@ -29,3 +29,12 @@ WHERE neutered is false AND escape_attempts < 3;
 --  name 
 -- ------
 -- (0 rows)
+
+SELECT date_of_birth
+FROM animals
+WHERE name = 'Agumon' OR name = 'Pikachu';
+--  date_of_birth 
+-- ---------------
+--  2020-02-03
+--  2021-01-07
+-- (2 rows)
