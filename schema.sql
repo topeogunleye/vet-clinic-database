@@ -1,6 +1,6 @@
 /* Database schema to keep the structure of entire database. */
 -- CREATE DATABASE
--- CREATE DATABASE vet_clinic;
+CREATE DATABASE vet_clinic;
 
 DROP TABLE IF EXISTS animals;
 CREATE TABLE animals (
