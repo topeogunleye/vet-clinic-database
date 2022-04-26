@@ -49,3 +49,13 @@ WHERE weight_kg < 10.5;
 --  Pikachu |              15
 --  Devimon |              11
 -- (4 rows)
+
+SELECT * 
+FROM animals
+WHERE neutered is true;
+--  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg 
+-- ----+---------+---------------+-----------------+----------+-----------
+--   1 | Agumon  | 2020-02-03    |              10 | t        |         0
+--   2 | Gabumon | 2018-11-15    |               8 | t        |         2
+--   4 | Devimon | 2017-05-12    |              11 | t        |         5
+-- (3 rows)
