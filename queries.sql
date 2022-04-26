@@ -69,3 +69,12 @@ WHERE name NOT like 'Gabumon';
 --   3 | Pikachu | 2021-01-07    |              15 | f        |         1
 --   4 | Devimon | 2017-05-12    |              11 | t        |         5
 -- (3 rows)
+
+SELECT *
+FROM animals
+WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
+ id |  name   | date_of_birth | escape_attempts | neutered | weight_kg 
+----+---------+---------------+-----------------+----------+-----------
+  7 | Pikachu | 2021-01-07    |               1 | f        |     13.04
+  8 | Devimon | 2017-05-12    |               5 | t        |        11
+(2 rows)
