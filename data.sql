@@ -54,3 +54,10 @@ WHERE species IS NULL;
 
 -- commit the transaction
 COMMIT;
+
+-- Inside a transaction delete all records in the animals table, then roll back the transaction.
+BEGIN;
+
+DELETE FROM animals;
+
+ROLLBACK;
