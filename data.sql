@@ -51,3 +51,6 @@ WHERE species IS NULL;
 --   4 | Devimon | 2017-05-12    |               5 | t        |        11 | digimon
 --   3 | Pikachu | 2021-01-07    |               1 | f        |     13.04 | pokemon
 -- (4 rows)
+
+-- commit the transaction
+COMMIT;
