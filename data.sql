@@ -31,3 +31,23 @@ BEGIN;
 UPDATE animals
 SET species = 'digimon'
 WHERE name like '%mon';
+--  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg | species 
+-- ----+---------+---------------+-----------------+----------+-----------+---------
+--   3 | Pikachu | 2021-01-07    |               1 | f        |     13.04 | 
+--   1 | Agumon  | 2020-02-03    |               0 | t        |     10.23 | digimon
+--   2 | Gabumon | 2018-11-15    |               2 | t        |         8 | digimon
+--   4 | Devimon | 2017-05-12    |               5 | t        |        11 | digimon
+-- (4 rows)
+
+
+-- Update the animals table by setting the species column to pokemon for all animals that don't have species already set.
+UPDATE animals
+SET species = 'pokemon'
+WHERE species IS NULL;
+--  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg | species 
+-- ----+---------+---------------+-----------------+----------+-----------+---------
+--   1 | Agumon  | 2020-02-03    |               0 | t        |     10.23 | digimon
+--   2 | Gabumon | 2018-11-15    |               2 | t        |         8 | digimon
+--   4 | Devimon | 2017-05-12    |               5 | t        |        11 | digimon
+--   3 | Pikachu | 2021-01-07    |               1 | f        |     13.04 | pokemon
+-- (4 rows)
