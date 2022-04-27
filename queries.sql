@@ -104,3 +104,15 @@ FROM animals;
 --  10.5675000000000000
 -- (1 row)
 
+-- Who escapes the most, neutered or not neutered animals?
+SELECT 
+    neutered, MAX(escape_attempts)
+FROM
+    animals
+GROUP BY neutered
+ORDER BY MAX(escape_attempts) DESC LIMIT 1;
+--  neutered | max 
+-- ----------+-----
+--  t        |   5
+-- (1 row)
+
