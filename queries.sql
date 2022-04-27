@@ -80,3 +80,13 @@ WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
 --   7 | Pikachu | 2021-01-07    |               1 | f        |     13.04
 --   8 | Devimon | 2017-05-12    |               5 | t        |        11
 -- (2 rows)
+
+
+-- Write queries to answer the following questionsons:
+-- How many animals are there?
+SELECT COUNT(*)
+FROM animals;
+--  count 
+-- -------
+--      4
+-- (1 row)
