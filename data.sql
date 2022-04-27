@@ -78,6 +78,13 @@ SET
     weight_kg = weight_kg * -1;
 
 -- rollback the transaction to the savepoint
-ROLLBACK
+ ROLLBACK TO SAVEPOINT my_savepoint;
+ 
+-- Update all animals' weights that are negative to be their weight multiplied by -1.
+UPDATE animals
+SET 
+    weight_kg = weight_kg * -1
+WHERE
+    weight_kg < 0;
 
 
