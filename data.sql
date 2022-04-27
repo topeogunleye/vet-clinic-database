@@ -72,3 +72,7 @@ WHERE date_of_birth > '2022-01-01';
 -- Create a savepoint for the transaction.
 SAVEPOINT my_savepoint;
 
+-- Update all animals' weight to be their weight multiplied by -1.
+UPDATE animals
+SET
+    weight_kg = weight_kg * -1;
