@@ -90,3 +90,9 @@ FROM animals;
 -- -------
 --      4
 -- (1 row)
+
+-- How many animals have never tried to escape
+SELECT COUNT(*)
+FROM animals
+WHERE escape_attempts = 0;
+
