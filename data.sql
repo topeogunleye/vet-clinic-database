@@ -79,7 +79,7 @@ SET
 
 -- rollback the transaction to the savepoint
  ROLLBACK TO SAVEPOINT my_savepoint;
- 
+
 -- Update all animals' weights that are negative to be their weight multiplied by -1.
 UPDATE animals
 SET 
@@ -87,4 +87,5 @@ SET
 WHERE
     weight_kg < 0;
 
-
+-- commit the transaction
+COMMIT;
