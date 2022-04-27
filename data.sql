@@ -14,8 +14,14 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
         ('Blossom', '1998-10-13', 3, true, 17),
         ('Ditto', '2022-05-14', 4, true, 4);
 
-
+-- begin the transaction
 BEGIN;
 
+-- update the animals table by setting the species column to unspecified
+UPDATE animals
+SET species = 'unspecified';
+
+-- roll back the transaction
+ROLLBACK;
 
 
