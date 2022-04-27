@@ -69,3 +69,6 @@ FROM
      animals
 WHERE date_of_birth > '2022-01-01';
 
+-- Create a savepoint for the transaction.
+SAVEPOINT my_savepoint;
+
