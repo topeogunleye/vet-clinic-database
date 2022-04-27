@@ -116,3 +116,9 @@ ORDER BY MAX(escape_attempts) DESC LIMIT 1;
 --  t        |   5
 -- (1 row)
 
+-- What is the minimum and maximum weight of each type of animal?
+SELECT
+    MIN(weight_kg), MAX(weight_kg)
+FROM
+    animals
+GROUP BY species;
