@@ -76,3 +76,8 @@ SAVEPOINT my_savepoint;
 UPDATE animals
 SET
     weight_kg = weight_kg * -1;
+
+-- rollback the transaction to the savepoint
+ROLLBACK
+
+
