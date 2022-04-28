@@ -26,4 +26,5 @@ CREATE TABLE species(
     name VARCHAR(100)
 )
 
-ALTER TABLE animals ADD PRIMARY KEY ();
+ALTER TABLE animals 
+ADD PRIMARY KEY (animal_id);
