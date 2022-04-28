@@ -168,3 +168,23 @@ ON
 WHERE
   species.name = 'pokemon';
 
+-- List all owners and their animals, remember to include those that don't own any animal.
+SELECT
+  name
+FROM
+  owners
+  JOIN animals
+  ON owners.id = animals.owners_id;
+
+-- How many animals are there per species
+SELECT
+  species.name, COUNT(*)
+FROM
+  animals
+JOIN
+  species
+ON
+  animals.species_id = species.specie_id
+GROUP BY
+  species.name;
+
