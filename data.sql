@@ -125,7 +125,7 @@ SET species_id = (
 )
 WHERE name NOT like '%mon';
 
-UPDATE animals.animals
+UPDATE animals
 SET owner_id = (
     SELECT owner_id
     FROM owners
@@ -133,7 +133,7 @@ SET owner_id = (
     )
 WHERE name = 'Agumon';
 
-UPDATE  animals.animals
+UPDATE  animals
 SET owner_id = (
     SELECT owner_id
     FROM owners
@@ -142,7 +142,7 @@ SET owner_id = (
 WHERE name = 'Gabumon'
 OR name = 'Pikachu';
 
-UPDATE  animals.animals
+UPDATE  animals
 SET owner_id = (
     SELECT owner_id
     FROM owners
@@ -151,7 +151,7 @@ SET owner_id = (
 WHERE name = 'Devimon'
 OR name = 'Plantmon';
 
-UPDATE  animals.animals
+UPDATE  animals
 SET owner_id = (
     SELECT owner_id
     FROM owners
@@ -161,7 +161,7 @@ WHERE name = 'Charmander'
 OR name = 'Squirtle'
 OR name = 'Blossom';
 
-UPDATE animals.animals
+UPDATE animals
 SET owner_id = (
     SELECT owner_id
     FROM owners
