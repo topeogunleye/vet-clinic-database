@@ -4,7 +4,7 @@ CREATE DATABASE vet_clinic;
 
 DROP TABLE IF EXISTS animals;
 CREATE TABLE animals (
-    id INT GENERATED ALWAYS AS IDENTITY,
+    animal_id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(100),
     date_of_birth DATE,
     escape_attempts INT,
@@ -26,3 +26,4 @@ CREATE TABLE species(
     name VARCHAR(100)
 )
 
+ALTER TABLE animals ADD PRIMARY KEY ();
