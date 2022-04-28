@@ -210,7 +210,7 @@ JOIN
 ON
   animals.owners_id = owners.owner_id
 WHERE
-  owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
+  owners.fullname = 'Dean Winchester' AND animals.escape_attempts = 0;
 
 
 -- Who owns the most animals
