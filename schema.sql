@@ -19,15 +19,23 @@ CREATE TABLE owners(
     owner_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     fullname VARCHAR(100),
     age INT 
-)
+);
 
 CREATE TABLE species(
-    specie_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    species_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(100)
-)
+);
 
 ALTER TABLE animals 
 ADD PRIMARY KEY (animal_id);
 
 ALTER TABLE animals
-DROP COLUMN species;
+DROP COLUMN species
+
+ALTER TABLE animals
+ADD COLUMN species_id VARCHAR(100);
+
+ALTER TABLE animals
+ADD CONSTRAINT fk_species 
+FOREIGN KEY (species_id) 
+REFERENCES species (species_id);
