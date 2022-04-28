@@ -219,7 +219,7 @@ SELECT
 FROM
   owners
   JOIN animals
-  ON owners.id = animals.owners_id
+  ON owners.owner_id = animals.owners_id
 GROUP BY
   owners.fullname
 ORDER BY
