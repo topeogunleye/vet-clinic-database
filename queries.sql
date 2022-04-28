@@ -188,3 +188,15 @@ ON
 GROUP BY
   species.name;
 
+-- List all Digimon owned by Jennifer Orwell
+SELECT
+  animals.name
+FROM
+  animals
+JOIN
+  owners
+ON
+  animals.owners_id = owners.owner_id
+WHERE
+  owners.full_name = 'Jennifer Orwell';
+
