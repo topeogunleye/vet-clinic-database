@@ -89,3 +89,84 @@ WHERE
 
 -- commit the transaction
 COMMIT;
+
+
+INSERT INTO owners (fullname, age)
+    VALUES 
+        ('Sam Smith', 34),
+        ('Jennifer Orwell', 19),
+        ('Bob', 45),
+        ('Melody Pond', 77),
+        ('Dean Winchester', 14),
+        ('Jodie Whittaker', 38);
+
+INSERT INTO species (name)
+    VALUES 
+        ('Pokemon'),
+        ('Digimon');
+
+-- Modify your inserted animals so it includes the species_id value:
+-- If the name ends in "mon" it will be Digimon
+-- All other animals are Pokemon
+
+UPDATE animals
+SET species_id = (
+    SELECT specie_id
+    FROM species
+    WHERE name = 'Digimon'
+    )
+WHERE name like '%mon';
+
+UPDATE animals
+SET species_id = (
+    SELECT specie_id
+    FROM species
+    WHERE name = 'Pokemon'
+)
+WHERE name NOT like '%mon';
+
+UPDATE animals
+SET owners_id = (
+    SELECT owner_id
+    FROM owners
+    WHERE fullname = 'Sam Smith'
+    )
+WHERE name = 'Agumon';
+
+UPDATE  animals
+SET owners_id = (
+    SELECT owner_id
+    FROM owners
+    WHERE fullname = 'Jennifer Orwell'
+    )
+WHERE name = 'Gabumon'
+OR name = 'Pikachu';
+
+UPDATE  animals
+SET owners_id = (
+    SELECT owner_id
+    FROM owners
+    WHERE fullname = 'Bob'
+    )
+WHERE name = 'Devimon'
+OR name = 'Plantmon';
+
+UPDATE  animals
+SET owners_id = (
+    SELECT owner_id
+    FROM owners
+    WHERE fullname = 'Melody Pond'  -- or name = 'Charmander'
+    )
+WHERE name = 'Charmander'
+OR name = 'Squirtle'
+OR name = 'Blossom';
+
+UPDATE animals
+SET owners_id = (
+    SELECT owner_id
+    FROM owners
+    WHERE fullname = 'Dean Winchester'
+    )
+WHERE name = 'Angemon'
+OR name = 'Boarmon';
+
