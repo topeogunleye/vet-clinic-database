@@ -174,7 +174,7 @@ SELECT
 FROM
   owners
   JOIN animals
-  ON owners.id = animals.owners_id;
+  ON owners.owner_id = animals.owners_id;
 
 -- How many animals are there per species
 SELECT
