@@ -155,3 +155,16 @@ ON
   animals.owners_id = owners.owner_id
 WHERE
   owners.full_name = 'Melody Pond';
+
+-- List of all animals that are pokemon (their type is Pokemon).
+SELECT
+  animals.name
+FROM
+  animals
+JOIN
+  species
+ON
+  animals.species_id = species.specie_id
+WHERE
+  species.name = 'pokemon';
+
