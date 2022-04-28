@@ -215,13 +215,13 @@ WHERE
 
 -- Who owns the most animals
 SELECT
-  owners.full_name, COUNT(*)
+  owners.fullname, COUNT(*)
 FROM
   owners
   JOIN animals
   ON owners.id = animals.owners_id
 GROUP BY
-  owners.full_name
+  owners.fullname
 ORDER BY
   COUNT(*) DESC
 LIMIT 1;
