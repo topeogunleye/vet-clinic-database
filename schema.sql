@@ -16,7 +16,7 @@ ALTER TABLE animals
 ADD COLUMN species VARCHAR;
 
 CREATE TABLE owners(
-    owner_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    owners_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     fullname VARCHAR(100),
     age INT 
 );
@@ -39,3 +39,11 @@ ALTER TABLE animals
 ADD CONSTRAINT fk_species 
 FOREIGN KEY (species_id) 
 REFERENCES species (species_id);
+
+ALTER TABLE animals
+ADD COLUMN owners_id VARCHAR(100);
+
+ALTER TABLE animals
+ADD CONSTRAINT fk_owners 
+FOREIGN KEY (owners_id) 
+REFERENCES owners (owners_id);
