@@ -200,3 +200,16 @@ ON
 WHERE
   owners.full_name = 'Jennifer Orwell';
 
+-- List all animals owned by Dean Winchester that haven't tried to escape
+SELECT
+  animals.name
+FROM
+  animals
+JOIN
+  owners
+ON
+  animals.owners_id = owners.owner_id
+WHERE
+  owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
+
+
