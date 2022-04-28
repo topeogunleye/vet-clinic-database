@@ -28,3 +28,6 @@ CREATE TABLE species(
 
 ALTER TABLE animals 
 ADD PRIMARY KEY (animal_id);
+
+ALTER TABLE animals
+DROP COLUMN species;
