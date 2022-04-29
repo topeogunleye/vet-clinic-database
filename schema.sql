@@ -59,7 +59,7 @@ CREATE TABLE vets(
 );
 
 CREATE TABLE specializations(
-  id INT GENERATED ALWAYS AS IDENTITY,
+  specie_id INT GENERATED ALWAYS AS IDENTITY,
   species_id INT REFERENCES species(specie_id),
   vets_id INT REFERENCES vets(vet_id),
   PRIMARY KEY(id)
