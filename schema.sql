@@ -1,7 +1,7 @@
 /* Database schema to keep the structure of entire database. */
 -- CREATE DATABASE
-DROP DATABASE IF EXISTS vet_clinic;
-CREATE DATABASE vet_clinic;
+-- DROP DATABASE IF EXISTS vet_clinic;
+-- CREATE DATABASE vet_clinic;
 
 DROP TABLE IF EXISTS animals;
 CREATE TABLE animals (
@@ -50,3 +50,26 @@ ALTER TABLE animals
 ADD CONSTRAINT fk_owners 
 FOREIGN KEY (owners_id) 
 REFERENCES owners (owner_id);
+
+CREATE TABLE vets(
+    vet_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    date_of_graduation DATE
+);
+
+CREATE TABLE specializations(
+  specie_id INT GENERATED ALWAYS AS IDENTITY,
+  species_id INT REFERENCES species(specie_id),
+  vets_id INT REFERENCES vets(vet_id),
+  PRIMARY KEY(specie_id)
+);
+
+CREATE TABLE visits(
+  visit_id INT GENERATED ALWAYS AS IDENTITY,
+  animals_id INT REFERENCES animals(animal_id),
+  vets_id INT REFERENCES vets(vet_id),
+  date_of_visit DATE,
+  PRIMARY KEY(visit_id)
+);
+
