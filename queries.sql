@@ -235,12 +235,12 @@ FROM
   owners
   JOIN animals
   ON owners.owner_id = animals.owners_id
-  JOIN sightings
-  ON animals.animal_id = sightings.animal_id
+  JOIN visits
+  ON animals.animal_id = visits.animals_id
 WHERE
   owners.fullname = 'William Tatcher'
   ORDER BY
-  sightings.date DESC
+  visits.date_of_visit DESC
   LIMIT 1;
 
   -- How many different animals did Stephanie Mendez see?
@@ -251,7 +251,7 @@ FROM
 JOIN
   visits
 ON
-  animals.id = visits.animals_id
+  animals.animal_id = visits.animals_id
 JOIN
   vets
 ON
@@ -355,9 +355,9 @@ JOIN
 ON
   visits.vets_id = vets.vet_id
 WHERE
-  vets.id NOT IN (
+  vets.vet_id NOT IN (
     SELECT
-      vets.id
+      vets.vet_id
     FROM
       vets
     JOIN

@@ -1,7 +1,7 @@
 /* Database schema to keep the structure of entire database. */
 -- CREATE DATABASE
-DROP DATABASE IF EXISTS vet_clinic;
-CREATE DATABASE vet_clinic;
+-- DROP DATABASE IF EXISTS vet_clinic;
+-- CREATE DATABASE vet_clinic;
 
 DROP TABLE IF EXISTS animals;
 CREATE TABLE animals (
@@ -62,14 +62,14 @@ CREATE TABLE specializations(
   specie_id INT GENERATED ALWAYS AS IDENTITY,
   species_id INT REFERENCES species(specie_id),
   vets_id INT REFERENCES vets(vet_id),
-  PRIMARY KEY(id)
+  PRIMARY KEY(specie_id)
 );
 
 CREATE TABLE visits(
-  id INT GENERATED ALWAYS AS IDENTITY,
+  visit_id INT GENERATED ALWAYS AS IDENTITY,
   animals_id INT REFERENCES animals(animal_id),
   vets_id INT REFERENCES vets(vet_id),
   date_of_visit DATE,
-  PRIMARY KEY(id)
+  PRIMARY KEY(visit_id)
 );
 

@@ -164,7 +164,7 @@ VALUES ('William Tatcher'),
 -- Vet Jack Harkness is specialized in Digimon.
 
 INSERT INTO specializations
-    (specie_id, vet_id)
+    (species_id, vets_id)
 VALUES
     ((SELECT specie_id
       FROM species
@@ -208,7 +208,7 @@ VALUES
 -- Blossom visited William Tatcher on Jan 11th, 2021.
 
 INSERT INTO visits
-    (animal_id, vet_id, visit_date)
+    (animals_id, vets_id, date_of_visit)
 VALUES
     ((SELECT animal_id
       FROM animals
@@ -342,7 +342,7 @@ VALUES
      (SELECT vet_id
       FROM vets
       WHERE name = ' Stephanie Mendez'),
-     '2020-24-05'),
+     '2020-05-24'),
     ((SELECT animal_id
       FROM animals
       WHERE name = 'Blossom '),
