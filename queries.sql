@@ -225,3 +225,22 @@ GROUP BY
 ORDER BY
   COUNT(*) DESC
 LIMIT 1;
+
+-- Write queries to answer the following:
+-- Who was the last animal seen by William Tatcher?
+
+SELECT
+  owners.fullname
+FROM
+  owners
+  JOIN animals
+  ON owners.owner_id = animals.owners_id
+  JOIN sightings
+  ON animals.animal_id = sightings.animal_id
+WHERE
+  owners.fullname = 'William Tatcher'
+  ORDER BY
+  sightings.date DESC
+  LIMIT 1;
+
+  -- What was the last animal seen by William Tatcher?
