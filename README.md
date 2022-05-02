@@ -1,13 +1,20 @@
 # Vet Clinic
 >A Relational database to create the data structure for a vet clinic.
+> 
+> ## Indexing Results
+> 
+| Before Indexing                | After Indexing                |
+|--------------------------------|-------------------------------|
+| ![](images/beforeIndexing.png) | ![](images/afterIndexing.png) |
+
 
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
 
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+- Use [schema.sql](/schema.sql) to create all tables.
+- Use [data.sql](/data.sql) to populate tables with sample data.
+- Check [queries.sql](/queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 
 ## Authors
@@ -17,6 +24,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - GitHub: [@topeogunleye](https://github.com/topeogunleye)
 - Twitter: [@tope_leye](https://twitter.com/tope_leye)
 - LinkedIn: [ogunleye](https://linkedin.com/in/ogunleye)
+
+  👤 **Dagic-zewdu**
+
+- GitHub: [Github](https://github.com/Dagic-zewdu)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dagic-zewdu/)
+- Twitter: [Twitter](https://twitter.com/dagic4)
 
 ## 🤝 Contributing
 
@@ -36,4 +49,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](/MIT.md) licensed.

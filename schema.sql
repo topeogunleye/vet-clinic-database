@@ -38,9 +38,6 @@ DROP COLUMN species;
 ALTER TABLE animals
 ADD COLUMN species_id INT;
 
--- Add an email column to your owners table
-ALTER TABLE owners ADD COLUMN email VARCHAR(120);
-
 ALTER TABLE animals
 ADD CONSTRAINT fk_species
 FOREIGN KEY (species_id)
@@ -76,7 +73,7 @@ CREATE TABLE visits(
   PRIMARY KEY(visit_id)
 );
 
-ALTER TABLE owners ADD COLUMN email VARCHAR(120)
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 CREATE INDEX ON visits (animals_id)
 CREATE INDEX ON visits (vets_id)
