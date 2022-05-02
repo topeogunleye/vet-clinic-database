@@ -4,7 +4,7 @@ SELECT *
 FROM animals
 where name like '%mon';
 
---  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg 
+--  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg
 -- ----+---------+---------------+-----------------+----------+-----------
 --   1 | Agumon  | 2020-02-03    |              10 | t        |         0
 --   2 | Gabumon | 2018-11-15    |               8 | t        |         2
@@ -13,10 +13,10 @@ where name like '%mon';
 
 
 SELECT name
-FROM animals 
+FROM animals
 WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 
---   name   
+--   name
 -- ---------
 --  Gabumon
 --  Devimon
@@ -27,7 +27,7 @@ SELECT name
 FROM animals
 WHERE neutered is false AND escape_attempts < 3;
 
---   name   
+--   name
 -- ---------
 --  Pikachu
 -- (1 row)
@@ -36,7 +36,7 @@ WHERE neutered is false AND escape_attempts < 3;
 SELECT date_of_birth
 FROM animals
 WHERE name = 'Agumon' OR name = 'Pikachu';
---  date_of_birth 
+--  date_of_birth
 -- ---------------
 --  2020-02-03
 --  2021-01-07
@@ -45,17 +45,17 @@ WHERE name = 'Agumon' OR name = 'Pikachu';
 SELECT name, escape_attempts
 FROM animals
 WHERE weight_kg < 10.5;
---   name   | escape_attempts 
+--   name   | escape_attempts
 -- ---------+-----------------
 --  Agumon  |               0
 --  Gabumon |               2
 -- (2 rows)
 
 
-SELECT * 
+SELECT *
 FROM animals
 WHERE neutered is true;
---  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg 
+--  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg
 -- ----+---------+---------------+-----------------+----------+-----------
 --   1 | Agumon  | 2020-02-03    |              10 | t        |         0
 --   2 | Gabumon | 2018-11-15    |               8 | t        |         2
@@ -65,7 +65,7 @@ WHERE neutered is true;
 SELECT *
 FROM animals
 WHERE name NOT like 'Gabumon';
---  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg 
+--  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg
 -- ----+---------+---------------+-----------------+----------+-----------
 --   1 | Agumon  | 2020-02-03    |              10 | t        |         0
 --   3 | Pikachu | 2021-01-07    |              15 | f        |         1
@@ -75,7 +75,7 @@ WHERE name NOT like 'Gabumon';
 SELECT *
 FROM animals
 WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
---  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg 
+--  id |  name   | date_of_birth | escape_attempts | neutered | weight_kg
 -- ----+---------+---------------+-----------------+----------+-----------
 --   7 | Pikachu | 2021-01-07    |               1 | f        |     13.04
 --   8 | Devimon | 2017-05-12    |               5 | t        |        11
@@ -86,7 +86,7 @@ WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
 -- How many animals are there?
 SELECT COUNT(*)
 FROM animals;
---  count 
+--  count
 -- -------
 --      4
 -- (1 row)
@@ -99,19 +99,19 @@ WHERE escape_attempts = 0;
 -- What is the average weight of animals?
 SELECT AVG(weight_kg)
 FROM animals;
---          avg         
+--          avg
 -- ---------------------
 --  10.5675000000000000
 -- (1 row)
 
 -- Who escapes the most, neutered or not neutered animals?
-SELECT 
+SELECT
     neutered, MAX(escape_attempts)
 FROM
     animals
 GROUP BY neutered
 ORDER BY MAX(escape_attempts) DESC LIMIT 1;
---  neutered | max 
+--  neutered | max
 -- ----------+-----
 --  t        |   5
 -- (1 row)
@@ -130,9 +130,9 @@ FROM
     animals
 WHERE date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31';
 
---  avg 
+--  avg
 -- -----
-    
+
 -- (1 row)
 
 -- Write queries (using JOIN) to answer the following questions:
@@ -399,3 +399,10 @@ GROUP BY
   species.name
 ORDER BY
   COUNT(*) DESC LIMIT 1;
+
+explain analyze SELECT COUNT(*) FROM visits where animals_id = 4;
+
+explain analyze SELECT * FROM visits where vets_id = 2;
+
+explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
+
