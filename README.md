@@ -2,7 +2,7 @@
 
 > A Relational database to create the data structure for a vet clinic.
 
-![vetDatabase](images/clinic_diagram.png)
+![vetDatabase](images/vet_clinic_db_schema_diagram.png)
 
 > ## Indexing Results
 >
