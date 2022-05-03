@@ -33,9 +33,9 @@ CREATE TABLE invoices (
   total_amount DECIMAL NOT NULL,
   generated_at TIMESTAMP NOT NULL,
   payed_at TIMESTAMP NOT NULL,
-  fk_medical_history_id BIGINT NOT NULL,
-  CONSTRAINT fk_medical_history_id FOREIGN KEY (fk_medical_history_id) REFERENCES medical_histories (patient_id),
-  UNIQUE(fk_medical_history_id)
+  medical_history_id BIGINT NOT NULL,
+  CONSTRAINT medical_history_id FOREIGN KEY (medical_history_id) REFERENCES medical_histories (patient_id),
+  UNIQUE(medical_history_id)
 );
 -- Add Index to foreign keys
 CREATE INDEX fk_medical_history_id_index ON invoices (fk_medical_history_id);
