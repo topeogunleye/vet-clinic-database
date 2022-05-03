@@ -17,7 +17,6 @@ CREATE TABLE medical_histories (
   id INT GENERATED ALWAYS AS IDENTITY,
   admitted_at TIMESTAMP NOT NULL,
   patient_id BIGINT REFERENCES patients(id),
-  treatment_id BIGINT REFERENCES treatments(id),
   status VARCHAR NOT NULL,
   CONSTRAINT fk_patient_id FOREIGN KEY(patient_id) REFERENCES patients(id),
   CONSTRAINT fk_treatment_id FOREIGN KEY(treatment_id) REFERENCES treatments(id),
@@ -62,7 +61,7 @@ CREATE INDEX fk_treatment_id ON invoice_items (treatment_id);
 CREATE TABLE medical_histories_treatments (
   medical_history_id BIGINT REFERENCES medical_histories(id),
   treatment_id BIGINT REFERENCES treatments(id),
-  CONSTRAINT fk_medical_history_id FOREIGN KEY(medical_history_id) REFERENCES medical_histories(id),
+  CONSTRAINT medical_history_id FOREIGN KEY(medical_history_id) REFERENCES medical_histories(id),
   CONSTRAINT fk_treatment_id FOREIGN KEY(treatment_id) REFERENCES treatments(id),
   UNIQUE(medical_history_id, treatment_id)
 );
